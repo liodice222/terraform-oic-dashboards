@@ -43,7 +43,7 @@ resource "oci_management_dashboard_management_dashboard" "integration_overage_da
         position = {
           x = 0
           y = 0
-          width = 12
+          width = 24
           height = 6
         }
         configuration = {
@@ -68,7 +68,7 @@ resource "oci_management_dashboard_management_dashboard" "integration_overage_da
         position = {
           x = 0
           y = 6
-          width = 12
+          width = 24
           height = 6
         }
         configuration = {
@@ -118,7 +118,7 @@ resource "oci_management_dashboard_management_dashboard" "integration_count_dash
         position = {
           x = 0
           y = 0
-          width = 12
+          width = 24
           height = 6
         }
         configuration = {
@@ -143,8 +143,8 @@ resource "oci_management_dashboard_management_dashboard" "integration_count_dash
         position = {
           x = 0
           y = 6
-          width = 6
-          height = 4
+          width = 24
+          height = 6
         }
         configuration = {
           metricQuery = {
@@ -166,10 +166,10 @@ resource "oci_management_dashboard_management_dashboard" "integration_count_dash
         type = "single-value"
         title = "${data.oci_integration_integration_instances.instances.integration_instances[count.index].display_name} - Current Message Count"
         position = {
-          x = 6
-          y = 6
-          width = 6
-          height = 4
+          x = 0
+          y = 0
+          width = 24
+          height = 6
         }
         configuration = {
           metricQuery = {
@@ -208,7 +208,7 @@ resource "oci_management_dashboard_management_dashboard" "integration_summary_da
         position = {
           x = 0
           y = 0
-          width = 12
+          width = 24
           height = 6
         }
         configuration = {
@@ -233,7 +233,7 @@ resource "oci_management_dashboard_management_dashboard" "integration_summary_da
         position = {
           x = 0
           y = 6
-          width = 12
+          width = 24
           height = 6
         }
         configuration = {

@@ -21,11 +21,11 @@ resource "oci_monitoring_alarm" "message_pack_overage_alarm" {
   destinations = var.notification_topic_id != "" ? [var.notification_topic_id] : []
   
   # Suppress similar alarms for 1 hour
-  suppress {
-    time_suppress_from  = "0001-01-01T00:00:00Z"
-    time_suppress_until = "9999-12-31T23:59:59Z"
-    description        = "Suppress duplicate overage alerts"
-  }
+  #suppress {
+   # time_suppress_from  = "0001-01-01T00:00:00Z"
+    #time_suppress_until = "9999-12-31T23:59:59Z"
+    #description        = "Suppress duplicate overage alerts"
+  #}
 
   freeform_tags = merge(var.tags, {
     "AlertType" = "MessagePackOverage"
