@@ -50,12 +50,4 @@ variable "metric_resolution" {
   }
 }
 
-variable "tags" {
-  description = "Freeform tags to apply to all resources"
-  type        = map(string)
-  default = {
-    "Environment" = "Production"
-    "Service"     = "Integration"
-    "ManagedBy"   = "Terraform"
-  }
-}
+
