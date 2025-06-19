@@ -2,6 +2,7 @@
 resource "oci_monitoring_alarm" "message_pack_overage_alarm" {
   count = length(data.oci_integration_integration_instances.instances.integration_instances)
 
+  # change display name to substr(<string>,<offset>,<lenghth>)
   compartment_id = var.compartment_id
   display_name   = "Message Pack Overage - ${data.oci_integration_integration_instances.instances.integration_instances[count.index].display_name}"
   description    = "Alert when message pack overage occurs for ${data.oci_integration_integration_instances.instances.integration_instances[count.index].display_name}"
@@ -15,9 +16,10 @@ resource "oci_monitoring_alarm" "message_pack_overage_alarm" {
   # Evaluation settings
   resolution                = var.metric_resolution
   pending_duration         = var.alarm_pending_duration
+  # five minute duration to trigger alarm
   evaluation_slack_duration = "PT5M"
   
-  # Notification configuration (if topic provided)
+  # Notification configuration (if provided)
   destinations = var.notification_topic_id != "" ? [var.notification_topic_id] : []
   
   # Suppress similar alarms for 1 hour
@@ -27,7 +29,4 @@ resource "oci_monitoring_alarm" "message_pack_overage_alarm" {
     #description        = "Suppress duplicate overage alerts"
   #}
 
-  freeform_tags = merge(var.tags, {
-    "AlertType" = "MessagePackOverage"
-  })
-} 
+
