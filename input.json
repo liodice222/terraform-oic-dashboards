@@ -1,0 +1,22 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Alice Smith",
+      "department": "Finance",
+      "email": "alice.smith@example.com"
+    },
+    {
+      "id": 2,
+      "name": "Bob Johnson",
+      "department": "IT",
+      "email": "bob.johnson@example.com"
+    },
+    {
+      "id": 3,
+      "name": "Carol Lee",
+      "department": "HR",
+      "email": "carol.lee@example.com"
+    }
+  ]
+}
